@@ -12726,13 +12726,21 @@ __1259:
         shl     esi, 2
 ; Note: Memory operand is misaligned. Performance penalty
         add     esi, dword ptr [__aweapon_count]
+IFNDEF PATCHES
         mov     dword ptr [esi], ebx
+ELSE
+        add     dword ptr [esi], ebx
+ENDIF
         mov     ebx, 1250
         mov     esi, 2
         shl     esi, 2
 ; Note: Memory operand is misaligned. Performance penalty
         add     esi, dword ptr [__aweapon_count]
+IFNDEF PATCHES
         mov     dword ptr [esi], ebx
+ELSE
+        add     dword ptr [esi], ebx
+ENDIF
 
 __1260:
 ; Note: Memory operand is misaligned. Performance penalty
@@ -12774,13 +12782,21 @@ __1260:
         shl     esi, 2
 ; Note: Memory operand is misaligned. Performance penalty
         add     esi, dword ptr [__aweapon_count]
+IFNDEF PATCHES
         mov     dword ptr [esi], ebx
+ELSE
+        add     dword ptr [esi], ebx
+ENDIF
         mov     ebx, 1250
         mov     esi, 2
         shl     esi, 2
 ; Note: Memory operand is misaligned. Performance penalty
         add     esi, dword ptr [__aweapon_count]
+IFNDEF PATCHES
         mov     dword ptr [esi], ebx
+ELSE
+        add     dword ptr [esi], ebx
+ENDIF
 
 __1261:
 ; Note: Memory operand is misaligned. Performance penalty
@@ -12822,59 +12838,23 @@ __1261:
         shl     esi, 2
 ; Note: Memory operand is misaligned. Performance penalty
         add     esi, dword ptr [__aweapon_count]
+IFNDEF PATCHES
         mov     dword ptr [esi], ebx
+ELSE
+        add     dword ptr [esi], ebx
+ENDIF
         mov     ebx, 1250
         mov     esi, 2
         shl     esi, 2
 ; Note: Memory operand is misaligned. Performance penalty
         add     esi, dword ptr [__aweapon_count]
+IFNDEF PATCHES
         mov     dword ptr [esi], ebx
+ELSE
+        add     dword ptr [esi], ebx
+ENDIF
 
 __1262:
-IFDEF PATCHES
-        cmp     dword ptr [__vfree_version], 0
-        sete    al
-        movzx   eax, al
-        mov     dword ptr [ebp-184H], eax
-        sub     esp, 4
-        mov     dword ptr [esp], 6
-        mov     eax, ebx
-        call    __fkeyhit
-        mov     ebx, eax
-        mov     eax, dword ptr [ebp-184H]
-        and     eax, ebx
-        mov     dword ptr [ebp-184H], eax
-        sub     esp, 4
-        mov     dword ptr [esp], 56
-        mov     eax, ebx
-        call    __fkeydown
-        mov     ebx, eax
-        mov     eax, dword ptr [ebp-184H]
-        and     eax, ebx
-        and     eax, eax
-        je      __1262_2
-        mov     ebx, 7
-        mov     esi, 1
-        shl     esi, 2
-        add     esi, dword ptr [__aweapon]
-        mov     dword ptr [esi], ebx
-        mov     ebx, 7
-        mov     esi, 2
-        shl     esi, 2
-        add     esi, dword ptr [__aweapon]
-        mov     dword ptr [esi], ebx
-        mov     ebx, 1250
-        mov     esi, 1
-        shl     esi, 2
-        add     esi, dword ptr [__aweapon_count]
-        mov     dword ptr [esi], ebx
-        mov     ebx, 1250
-        mov     esi, 2
-        shl     esi, 2
-        add     esi, dword ptr [__aweapon_count]
-        mov     dword ptr [esi], ebx
-__1262_2:
-ENDIF
 ; Note: Memory operand is misaligned. Performance penalty
         cmp     dword ptr [__vfree_version], 0
         sete    al
@@ -12914,15 +12894,91 @@ ENDIF
         shl     esi, 2
 ; Note: Memory operand is misaligned. Performance penalty
         add     esi, dword ptr [__aweapon_count]
+IFNDEF PATCHES
         mov     dword ptr [esi], ebx
+ELSE
+        add     dword ptr [esi], ebx
+ENDIF
         mov     ebx, 1250
         mov     esi, 2
         shl     esi, 2
 ; Note: Memory operand is misaligned. Performance penalty
         add     esi, dword ptr [__aweapon_count]
+IFNDEF PATCHES
         mov     dword ptr [esi], ebx
+ELSE
+        add     dword ptr [esi], ebx
+ENDIF
 
 __1263:
+IFDEF PATCHES
+        cmp     dword ptr [__vfree_version], 0
+        sete    al
+        movzx   eax, al
+        mov     dword ptr [ebp-184H], eax
+        sub     esp, 4
+        mov     dword ptr [esp], 6
+        mov     eax, ebx
+        call    __fkeyhit
+        mov     ebx, eax
+        mov     eax, dword ptr [ebp-184H]
+        and     eax, ebx
+        mov     dword ptr [ebp-184H], eax
+        sub     esp, 4
+        mov     dword ptr [esp], 56
+        mov     eax, ebx
+        call    __fkeydown
+        mov     ebx, eax
+        mov     eax, dword ptr [ebp-184H]
+        and     eax, ebx
+        and     eax, eax
+        je      __1263_2
+        mov     ebx, 7
+        mov     esi, 1
+        shl     esi, 2
+        add     esi, dword ptr [__aweapon]
+        mov     dword ptr [esi], ebx
+        mov     ebx, 7
+        mov     esi, 2
+        shl     esi, 2
+        add     esi, dword ptr [__aweapon]
+        mov     dword ptr [esi], ebx
+        mov     ebx, 1250
+        mov     esi, 1
+        shl     esi, 2
+        add     esi, dword ptr [__aweapon_count]
+        add     dword ptr [esi], ebx
+        mov     ebx, 1250
+        mov     esi, 2
+        shl     esi, 2
+        add     esi, dword ptr [__aweapon_count]
+        add     dword ptr [esi], ebx
+__1263_2:
+
+        cmp     dword ptr [__vfree_version], 0
+        sete    al
+        movzx   eax, al
+        mov     dword ptr [ebp-184H], eax
+        sub     esp, 4
+        mov     dword ptr [esp], 7
+        mov     eax, ebx
+        call    __fkeyhit
+        mov     ebx, eax
+        mov     eax, dword ptr [ebp-184H]
+        and     eax, ebx
+        mov     dword ptr [ebp-184H], eax
+        sub     esp, 4
+        mov     dword ptr [esp], 56
+        mov     eax, ebx
+        call    __fkeydown
+        mov     ebx, eax
+        mov     eax, dword ptr [ebp-184H]
+        and     eax, ebx
+        and     eax, eax
+        je      __1263_3
+        xor     dword ptr [__vcheating], 1
+__1263_3:
+ENDIF
         cmp     dword ptr [ebp-60H], 0
         jle     __1264
 ; Note: Memory operand is misaligned. Performance penalty
